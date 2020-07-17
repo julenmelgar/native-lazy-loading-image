@@ -30,11 +30,12 @@
     <div class="album py-5 bg-light">
         <div class="container">
 
-            <pre><code>'loading' in HTMLImageElement.prototype === <span>false</span></code></pre>
             <script>
-                const hasSupport = 'loading' in HTMLImageElement.prototype;
-                document.documentElement.className = hasSupport ? 'pass' : 'fail';
-                document.querySelector('span').textContent = hasSupport;
+                if ('loading' in HTMLImageElement.prototype) {
+                    console.log('El navegador soporta `lazy-loading`...');
+                } else {
+                    console.log('`lazy-loading` no soportado...');
+                }
             </script>
 
             <div class="row row-album">
